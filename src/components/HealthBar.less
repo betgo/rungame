@@ -1,0 +1,70 @@
+.mix-bar(@color){
+    width: 100%;
+    height: 100%;
+    background-color: @color;
+    transition:1000ms;
+}
+
+.container{
+    width: 200px;
+    height: 200px;
+    border:  1px solid ;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    .left{
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        background-color: red;
+        transition:1000ms;
+        
+    }
+    .right{
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        left: 100px;
+        background-color: blue;
+        transition:1000ms;
+    }
+    .topRadius{
+        width: 100px;
+        position: absolute;
+        height: 100px;
+        overflow: hidden;
+        background-color:  #282c34;
+        border-radius: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        .bar{
+            .mix-bar(blue);
+            // animation: down 5s infinite;
+        }
+    }
+    .bottomRadius{
+        width: 100px;
+        position: absolute;
+        overflow: hidden;
+        height: 100px;
+        background-color:  #282c34;
+        border-radius: 50%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        .bar{
+            .mix-bar(red);
+            //animation: down 5s infinite;
+        }
+        .d{
+            width: 100%;
+            height: 100%;
+            background-color:  #282c34;
+        }
+    }
+
+}
+@keyframes down{
+    0% {transform: translateY(0);}
+    50% {transform: translateY(100px);}
+    100% {transform: translateY(200px);}
+}
